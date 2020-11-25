@@ -28,10 +28,13 @@ class Student(val Family: String, val Name: String, val LastName: String, val Ag
 @Dao
 interface StudentsDao {
     @get:Query("SELECT * FROM students")
-    val all: List<Student?>?
+    val all: List<Student>
 
     @get:Query("SELECT * FROM students limit 1")
     val first: Student?
+
+    @Query("SELECT * FROM students WHERE student_id=:id")
+    fun GetFromId(id: Int): Student?
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -43,6 +46,7 @@ interface StudentsDao {
 
     @Delete
     fun delete(vm: Student?)
+
 }
 
 @Database(entities = [Student::class], version = 1)

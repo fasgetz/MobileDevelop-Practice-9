@@ -25,4 +25,40 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    fun EditStudent(view: View?) {
+        try {
+            val intent = Intent(this@MainActivity, EditStudent()::class.java)
+            startActivity(intent)
+        }
+        catch (ex: Exception) {
+            val myToast = Toast.makeText(this, ex.message, Toast.LENGTH_LONG)
+            myToast.show()
+        }
+
+    }
+
+    fun WatchStudents(view: View?) {
+        try {
+            val intent = Intent(this@MainActivity, WatchStudents::class.java)
+            startActivity(intent)
+        }
+        catch (ex: Exception) {
+            val myToast = Toast.makeText(this, ex.message, Toast.LENGTH_LONG)
+            myToast.show()
+        }
+
+    }
+
+    fun DelStudent(view: View?) {
+        try {
+            val intent = Intent(this@MainActivity, DeleteStudent::class.java)
+            startActivity(intent)
+        }
+        catch (ex: Exception) {
+            val myToast = Toast.makeText(this, ex.message, Toast.LENGTH_LONG)
+            myToast.show()
+        }
+
+    }
 }

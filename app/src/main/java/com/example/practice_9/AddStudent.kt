@@ -13,8 +13,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-var Genders = ArrayList<String>();
-
 
 class AddStudent : AppCompatActivity() {
 
@@ -29,6 +27,7 @@ class AddStudent : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true);
         // доступ к элементам списка
 
+        var Genders = ArrayList<String>()
         Genders.add("Мужской")
         Genders.add("Женский")
 
